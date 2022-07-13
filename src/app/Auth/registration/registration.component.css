@@ -1,0 +1,110 @@
+.registration-page {
+  background: url('../../../assets/images/background.png');
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: Lato-Regular;
+}
+
+.registration-page .registration-form_container {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 36px 50px 60px;
+  background-color: #fff;
+  color: var(--text-primary-dark);
+  border-radius: 16px;
+  width: fit-content;
+  box-shadow: 0px 10px 30px 10px rgba(51, 51, 51, 0.05);
+}
+
+.registration-page .registration-form_container .registration-form_logo {
+  height: 34px;
+  margin-bottom: 70px;
+}
+
+.registration-page .registration-form_container h1 {
+  margin-bottom: 32px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  font-family: Lato-Bold !important;
+}
+
+.registration-page .registration-form_error-message {
+  margin-bottom: 16px;
+  margin-top: -24px;
+  color: var(--primary);
+}
+
+.registration-page .registration-form .registration-form_flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.registration-page .registration-form .registration-form_flex-top{
+  display: flex;
+}
+
+.registration-page .registration-form .registration-form_flex-bottom{
+  display: flex;
+}
+
+.registration-page .registration-form .registration-form_form-group{
+  display: flex;
+  flex-direction: column;
+  margin-right: 24px;
+}
+
+.registration-page .registration-form .registration-form_form-group label {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: var(--text-secondary-dark);
+}
+
+.registration-page .registration-form .registration-form_form-group input {
+  height: 50px;
+  width: 350px;
+  background: #FFFFFF;
+  margin-bottom: 16px;
+  padding: 0 16px;
+  border: 1px solid var(--border-grey);
+  border-radius: 8px;
+}
+
+.registration-page .registration-form .registration-form_form-group .registration-form_error-message{
+  font-size: 14px;
+  color: var(--primary);
+  margin-top: -6px;
+  margin-bottom: 16px;
+}
+/*
+.registration-page .registration-form .registration-form_form-group input:focus {
+  outline: none;
+} */
+
+.registration-page .registration-form button {
+  margin: 24px 0px;
+  height: 50px;
+  width:  350px;
+  font-size: 18px;
+  padding: 14px;
+  background: #FDCB47;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.registration-page .registration-form button:hover {
+  background: var(--primary-hover)
+}
+
+.registration-page .registration-form button:active {
+  transform: scale(0.99);
+}
+
+.registration-page .registration-form a{
+  color: var(--text-secondary-dark)
+}

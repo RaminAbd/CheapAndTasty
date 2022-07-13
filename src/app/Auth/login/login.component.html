@@ -1,0 +1,34 @@
+<div class="login-page">
+  <div class="login-form_container">
+      <img src="assets/images/Logo.svg" alt="logo" class="login-form_logo">
+      <h1>Sayta daxil olun!</h1>
+      <p class="login-form_error-message">{{errorMessage}}</p>
+      <form  class="login-form" [formGroup]="loginForm" >
+          <div class="login-form_form-group">
+              <label for="personalID">Şəxsiyyət vəsiqəsinin seriyası</label>
+              <input type="text" formControlName="personalID" autocomplete="off">
+              <p *ngIf="!validateRequired('personalID')" class="login-form_id-error-message">
+                  Şəxsiyyət vəsiqəsinin seriyasını daxil edin!
+              </p>
+              <p *ngIf="!validatePattern('personalID')" class="login-form_id-error-message">
+                  Şəxsiyyət vəsiqəsinin seriyası 11 rəqəmdən ibarət olmalıdır!
+              </p>
+          </div>
+          <div class="login-form_form-group">
+              <label for="password">Şifrə</label>
+              <input type="password" formControlName="password" autocomplete="off">
+              <p *ngIf="!validateRequired('password')" class="login-form_password-error-message">
+                  Şifrəni daxil edin!
+              </p>
+          </div>
+
+          <button type="submit" (click)="SignIn()">Daxil ol</button>
+          <p class="login-form_registration">
+              Hesabınız yoxdur? <a routerLink="/register" class="login-form_registration-link">
+                  Qeydiyyatdan keç.
+              </a>
+          </p>
+      </form>
+
+  </div>
+</div>

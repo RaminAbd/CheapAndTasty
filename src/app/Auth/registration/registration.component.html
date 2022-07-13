@@ -1,0 +1,69 @@
+<div class="registration-page">
+  <div class="registration-form_container">
+      <img src="assets/images/CheapAndTasty.svg" alt="logo" class="registration-form_logo">
+      <h1>Qeydiyyatdan keçin!</h1>
+      <p class="registration-form_error-message">{{errorMessage}}</p>
+      <form class="registration-form" [formGroup]="registrationForm">
+          <div class="registration-form_flex">
+              <div class="registration-form_flex-top">
+                  <!-- id start-->
+                  <div class="registration-form_form-group">
+                      <label for="personalID">Şəxsiyyət vəsiqəsinin seriyası</label>
+                      <input type="text" formControlName="personalID" autocomplete="off">
+                      <p *ngIf="!validateRequired('personalID')" class="registration-form_error-message">
+                          Şəxsiyyət vəsiqəsinin seriyasını daxil edin!
+                      </p>
+                      <p *ngIf="!validatePattern('personalID')" class="registration-form_error-message">
+                          Şəxsiyyət vəsiqəsinin seriyası 11 rəqəmdən ibarət olmalıdır!
+                      </p>
+                  </div>
+                  <!-- id end-->
+                  <!-- phone start-->
+                  <div class="registration-form_form-group">
+                      <label for="phoneNumber">Telefon nömrəsi</label>
+                      <input type="tel" formControlName="phoneNumber" autocomplete="off">
+                      <p *ngIf="!validateRequired('phoneNumber')" class="registration-form_error-message">
+                          Telefon nömrəsini daxil edin!
+                      </p>
+                      <p *ngIf="!validatePattern('phoneNumber')" class="registration-form_error-message">
+                          Telefon nömrəsini düzgün daxil edin!
+                      </p>
+                  </div>
+                  <!-- phone end-->
+              </div>
+              <div class="registration-form_flex-bottom">
+                  <!-- password start-->
+                  <div class="registration-form_form-group">
+                      <label for="password">Şifrə</label>
+                      <input type="password" formControlName="password" autocomplete="off">
+                      <p *ngIf="!validateRequired('password')" class="registration-form_error-message">
+                          Şifrəni daxil edin!
+                      </p>
+                      <p *ngIf="!validatePattern('password')" class="registration-form_error-message">
+                          Şifrə ən azı 6 rəqəmdən və bir böyük <br> hərfdən ibarət olmalıdır!
+                      </p>
+                  </div>
+                  <!-- password end-->
+                  <!-- password2 start-->
+                  <div class="registration-form_form-group">
+                      <label for="repeatedPassword">Şifrənin təsdiqi</label>
+                      <input type="password" formControlName="repeatedPassword" autocomplete="off">
+                      <p *ngIf="!validateRequired('repeatedPassword')" class="registration-form_error-message">
+                          Şifrəni təsdiqləyin!
+                      </p>
+                      <p class="registration-form_error-message">
+                          {{mismatchPasswordError}}
+                      </p>
+                  </div>
+                  <!-- password2 end-->
+              </div>
+          </div>
+          <button type="submit" (click)="signUp()">Davam et</button>
+          <p class="registration-form_login">
+              Hesabınız var? <a routerLink="/login" class="registration-form_login-link">
+                  Daxil ol.
+              </a>
+          </p>
+      </form>
+  </div>
+</div>

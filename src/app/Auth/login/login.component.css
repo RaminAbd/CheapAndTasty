@@ -1,0 +1,123 @@
+.login-page {
+  background: url('../../../assets/images/background.png');
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: Lato-Regular;
+}
+
+.login-page .login-form_container {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 60px;
+  background-color: #fff;
+  color: var(--text-primary-dark);
+  border-radius: 16px;
+  width: fit-content;
+  box-shadow: 0px 10px 30px 10px rgba(51, 51, 51, 0.05);
+}
+
+.login-page .login-form_container .login-form_logo {
+  height: 60px;
+  margin-bottom: 44px;
+}
+
+.login-page .login-form_container h1 {
+  margin-bottom: 32px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  font-family: Lato-Bold !important;
+}
+
+.login-page .login-form_error-message {
+  margin-bottom: 16px;
+  margin-top: -24px;
+  color: var(--primary);
+}
+
+.login-page .login-form .login-form_form-group{
+  display: flex;
+  flex-direction: column;
+}
+
+.login-page .login-form .login-form_form-group label {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: var(--text-secondary-dark);
+}
+
+.login-page .login-form .login-form_form-group input {
+  height: 50px;
+  width: 350px;
+  background: #FFFFFF;
+  margin-bottom: 16px;
+  padding: 0 16px;
+  border: 1px solid var(--border-grey);
+  border-radius: 8px;
+}
+
+.login-page .login-form .login-form_error input{
+  border-color: var(--primary)
+}
+
+.login-page .login-form .login-form_form-group .login-form_id-error-message,
+.login-page .login-form .login-form_form-group .login-form_password-error-message{
+  font-size: 14px;
+  color: var(--primary);
+  margin-top: -6px;
+  margin-bottom: 16px;
+}
+
+.login-page .login-form .login-form_form-group input:focus {
+  border-color: var(--blue);
+  outline: none;
+}
+
+.login-page .login-form .login-form_action {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-page .login-form .login-form_action .login-form_checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.login-page .login-form .login-form_action .login-form_checkbox input {
+  margin-right: 16px;
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+}
+
+.login-page .login-form .login-form_action .login-form_reset-password {
+  color: var(--text-grey)
+}
+
+.login-page .login-form button {
+  margin: 24px 0px;
+  width: 100%;
+  font-size: 18px;
+  padding: 14px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.login-page .login-form button:hover {
+  background: var(--primary-hover)
+}
+
+.login-page .login-form button:active {
+  transform: scale(0.99);
+}
+
+.login-page .login-form .login-form_registration,
+.login-page .login-form a{
+  color: var(--text-secondary-dark)
+}

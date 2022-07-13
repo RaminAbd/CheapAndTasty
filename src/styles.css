@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #eb1c2d;
+  --primary-hover: hsl(355, 82%, 47%);
+  --border-grey: #e7edef;
+  --text-grey: rgba(51, 51, 51, 0.5);
+  --text-primary-dark: #1a1a1a;
+  --text-secondary-dark: #333333;
+  --green: #91c197;
+  --green-saturated: #effcef;
+  --yellow: #f9b410;
+  --yellow-saturated: #feefd0;
+  --blue-saturated: #ecfbff;
+}
+
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+background-color: #FBFBFB;
+}
+
+@font-face {
+  src: url('../src/assets/fonts/Lato-Regular.ttf');
+  font-family: Lato-Regular;
+}
+
+@font-face {
+  src: url('../src/assets/fonts/Lato-Medium.ttf');
+  font-family: Lato-Medium;
+}
+
+@font-face {
+  src: url('../src/assets/fonts/Lato-Bold.ttf');
+  font-family: Lato-Bold;
+}
+
+body {
+  font-family: Lato-Medium !important;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+background-color: #EE4855 !important;
+}
+
+.mat-tab-label, .mat-tab-link {
+font-family: Lato-Medium !important;
+color: #333 !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
