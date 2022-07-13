@@ -1,6 +1,6 @@
 .login-page {
   background: url('../../../assets/images/background.png');
-  width: 100vw;
+  /* width: 100vw; */
   height: 100vh;
   display: grid;
   place-content: center;
@@ -19,8 +19,8 @@
 }
 
 .login-page .login-form_container .login-form_logo {
-  height: 60px;
-  margin-bottom: 44px;
+  height: 34px;
+  margin-bottom: 70px;
 }
 
 .login-page .login-form_container h1 {
@@ -102,7 +102,7 @@
   width: 100%;
   font-size: 18px;
   padding: 14px;
-  background: var(--primary);
+  background: #FDCB47;
   color: #fff;
   border: none;
   border-radius: 8px;
