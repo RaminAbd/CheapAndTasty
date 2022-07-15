@@ -1,0 +1,25 @@
+<div class="iconBar">
+  <div class="logo">
+    <a class="logo" href="/admin">
+      <img src="assets/images/CandT.svg" class="img-fluid">
+    </a>
+  </div>
+  <div class="page-list">
+    <a class="nav" [routerLink]="['orders']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+      <p id="q">Orders</p>
+    </a>
+    <a class="nav" [routerLink]="['category']" [routerLinkActive]="['active']">
+      <p id="q">Category</p>
+    </a>
+    <a class="nav" [routerLink]="['dishes']" [routerLinkActive]="['active']">
+      <p id="q">Dishes</p>
+    </a>
+    <a class="nav" [routerLink]="['ingredients']" [routerLinkActive]="['active']">
+      <p id="q">Ingredients</p>
+    </a>
+  </div>
+  <div class="logout">
+    <button>Logout</button>
+  </div>
+</div>
+

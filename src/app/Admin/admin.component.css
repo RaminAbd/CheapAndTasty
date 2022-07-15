@@ -1,0 +1,14 @@
+.admin-wrapper{
+  height:100vh;
+  display:flex;
+}
+.admin-nav-bar{
+  width:240px;
+  background: #EAEDF2;
+  position: relative;
+}
+.admin-pages{
+  width:80%;
+  padding-left: 60px;
+  padding-top: 60px;
+}
