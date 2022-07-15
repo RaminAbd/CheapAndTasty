@@ -1,6 +1,8 @@
 export class SignUpRequest{
-  personalID:string;
-  password:string;
-  phoneNumber:string;
-  repeatedPassword:string;
+  userName: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  address: string;
 }

@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { SignInResponse } from '../../Models/SignInResponse';
 import { SignInRequest } from '../../Models/SignInRequest';
 import { Router } from '@angular/router';
+import { AuthService } from '../../Services/Auth.service';
 
 @Component({
   selector: 'app-login',
@@ -16,11 +17,11 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   SignInRequest:SignInRequest = new SignInRequest();
   SignInResponse:SignInResponse = new SignInResponse();
-  constructor(private router:Router) { }
+  constructor(private router:Router,private authService: AuthService) { }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
-      personalID: new FormControl(null, [Validators.required, Validators.pattern('[0-9]{11}')]),
+      userName: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required])
     })
   }
@@ -52,25 +53,25 @@ export class LoginComponent implements OnInit {
   SignIn(){
     this.SignInRequest = this.loginForm.value;
     if(this.loginForm.valid){
-      // this.authService.SignIn(this.SignInRequest).subscribe(data=>{
-      //   this.SignInResponse = data;
-      //   console.log(this.SignInResponse);
-      //   if(this.SignInResponse.token!=="" || this.SignInResponse.token!==null){
-      //     console.log("girdi");
-      //
-      //   }
-      // },
-      // error => {
-      //   // error.error.forEach((e:any) => {
-      //   //   if(e.title === "DuplicateUserName"){
-      //   //     this.errorMessage = "Bu seriyalı hesab artıq mövcuddur!"
-      //   //   }
-      //   // });
-      //   console.log("error",error);
-      //   if(error.error.title === "Unauthorized"){
-      //     this.errorMessage = "Şəxsiyyət vəsiqəsinin seriyası və ya şifrə yanlışdır!"
-      //   }
-      // })
+      this.authService.SignIn(this.SignInRequest).subscribe(data=>{
+
+        this.SignInResponse = data;
+        console.log(this.SignInResponse);
+        if(this.SignInResponse.token!=="" || this.SignInResponse.token!==null){
+          console.log("girdi");
+          this.router.navigate([''])
+        }
+      },
+      error => {
+        // error.error.forEach((e:any) => {
+        //   if(e.title === "DuplicateUserName"){
+        //     this.errorMessage = "Bu seriyalı hesab artıq mövcuddur!"
+        //   }
+        // });
+        console.log("error",error);
+        this.errorMessage = "login və ya şifrə yanlışdır!"
+
+      })
     } else {
       this.showErrorMessage = true;
     }

@@ -1,4 +1,4 @@
 export class SignInRequest{
-  personalID:string;
+  userName:string;
   password:string;
 }

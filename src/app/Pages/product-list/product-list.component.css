@@ -90,9 +90,12 @@ position: absolute;
   justify-content: start;
 }
 .productItem{
-  width: 250px;
+  width: 30%;
   margin-right: 35px;
   margin-bottom: 35px;
+}
+.productItem img{
+  width:100%;
 }
 .productItem:nth-child(3n){
   margin-right: 0!important;

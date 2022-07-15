@@ -5,13 +5,10 @@
       <p class="login-form_error-message">{{errorMessage}}</p>
       <form  class="login-form" [formGroup]="loginForm" >
           <div class="login-form_form-group">
-              <label for="personalID">Şəxsiyyət vəsiqəsinin seriyası</label>
-              <input type="text" formControlName="personalID" autocomplete="off">
-              <p *ngIf="!validateRequired('personalID')" class="login-form_id-error-message">
-                  Şəxsiyyət vəsiqəsinin seriyasını daxil edin!
-              </p>
-              <p *ngIf="!validatePattern('personalID')" class="login-form_id-error-message">
-                  Şəxsiyyət vəsiqəsinin seriyası 11 rəqəmdən ibarət olmalıdır!
+              <label for="userName">userName</label>
+              <input type="text" formControlName="userName" autocomplete="off">
+              <p *ngIf="!validateRequired('userName')" class="login-form_id-error-message">
+                  userName daxil edin!
               </p>
           </div>
           <div class="login-form_form-group">
