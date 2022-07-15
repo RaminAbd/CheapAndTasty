@@ -8,6 +8,7 @@ import { LoginComponent } from './Auth/login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductListComponent } from './Pages/product-list/product-list.component';
+import { OrdersComponent } from './Admin/orders/orders.component';
 const routes: Routes = [
   {path: 'register', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
     AppComponent,
     RegistrationComponent,
     LoginComponent,
-    ProductListComponent
+    ProductListComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
