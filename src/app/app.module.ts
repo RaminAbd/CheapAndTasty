@@ -16,35 +16,61 @@ import { tokenInterceptor } from './Interceptors/tokenInterceptor';
 import { RefreshTokenInterceptor } from './Interceptors/RefreshTokenInterceptor';
 import { DishesComponent } from './Admin/Components/dishes/dishes.component';
 import { IngredientsComponent } from './Admin/Components/ingredients/ingredients.component';
-
+import { AuthGuard } from './Auth/auth.guard';
+import { TableModule } from 'primeng/table';
+import {DropdownModule} from 'primeng/dropdown';
+import { DishComponent } from './Admin/Components/dishes/dish/dish.component';
+import { ListComponent } from './Admin/Components/dishes/list/list.component';
 const routes: Routes = [
   {path: 'register', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'admin', component: AdminComponent, children: [
+  {path: 'admin',canActivate: [AuthGuard], component: AdminComponent, children: [
     {
       path: '',
       redirectTo: 'orders',
-      pathMatch: 'full'
+      pathMatch: 'full',
+
     },
     {
       path: 'orders',
-      component: OrdersComponent
+      component: OrdersComponent,
+      canActivate: [AuthGuard],
     },
     {
       path: 'category',
-      component: CategoryComponent
+      component: CategoryComponent,
+      canActivate: [AuthGuard],
     },
     {
       path: 'dishes',
-      component: DishesComponent
+      component: DishesComponent,
+      canActivate: [AuthGuard],
+      children: [
+        {
+          path: 'dish/:dishId/:categoryId',
+          component: DishComponent,
+          canActivate: [AuthGuard],
+        },
+        {
+          path: 'list',
+          component: ListComponent,
+          canActivate: [AuthGuard],
+        },
+        {
+          path: '',
+          redirectTo: 'list',
+          pathMatch: 'full'
+        },
+      ]
     },
     {
       path: 'ingredients',
-      component: IngredientsComponent
+      component: IngredientsComponent,
+      canActivate: [AuthGuard],
     },]
   },
 
-  {path: '', component: ProductListComponent},
+  {path: '',canActivate: [AuthGuard], component: ProductListComponent},
 ]
 @NgModule({
   declarations: [
@@ -57,14 +83,17 @@ const routes: Routes = [
     AdminNavBarComponent,
     CategoryComponent,
     DishesComponent,
-    DishesComponent,
-    IngredientsComponent
+    DishComponent,
+    IngredientsComponent,
+    ListComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    DropdownModule,
+    TableModule,
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes)

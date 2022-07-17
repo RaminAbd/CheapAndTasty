@@ -25,7 +25,12 @@ export class RefreshTokenInterceptor implements HttpInterceptor {
           var password = localStorage.getItem('password') as string;
           this.SignInRequest.userName = userName;
           this.SignInRequest.password = password;
-          this.authService.SignIn(this.SignInRequest).subscribe(data=>{ })
+          console.log(this.SignInRequest);
+
+          this.authService.SignIn(this.SignInRequest).subscribe(data=>{},
+          (error)=>{
+            this.router.navigate(['login'])
+          })
         }
 
         return observableThrowError(errorResponse);

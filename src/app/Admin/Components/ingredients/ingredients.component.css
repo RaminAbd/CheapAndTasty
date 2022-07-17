@@ -1,0 +1,97 @@
+h2{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  color: #1A1A1A;
+}
+.create button{
+  width: 230px;
+height: 50px;
+left: 337px;
+top: 213px;
+margin-top: 30px;
+background: #4cd07d;
+border-radius: 8px;
+border: none;outline: none;
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 22px;
+text-align: center;
+
+color: #323232;
+
+
+}
+.create-block{
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+}
+.create-block p{
+  margin-top: 30px;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+margin-bottom: 10px;
+line-height: 19px;
+
+color: #333333;
+}
+.create-block div{
+  width: 32%;
+}
+.create-block .inputs{
+  display: flex;
+  width: 100%;
+}
+.create-block .inputs .name{
+  margin-right: 15px;
+}
+.create-block input{
+  width: 100%;
+height: 44px;
+left: 337px;
+top: 149px;
+padding:8px;
+background: #FFFFFF;
+border: 1px solid #7B8689;
+border-radius: 8px;
+}
+.create-block button{
+  width: 400px;
+height: 50px;
+left: 337px;
+top: 213px;
+margin-top: 20px;
+border:none;
+outline:none;
+background: #FDCB47;
+border-radius: 8px;
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+text-align: center;
+color: #323232;
+
+}
+.image {
+  width: 32%;
+  margin-right: 15px;
+  margin-top: 20px;
+}
+.image input[type="file"]{
+  display: none;
+}
+.image label{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #FDCB47;
+    border-radius: 8px;
+}

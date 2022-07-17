@@ -1,0 +1,58 @@
+<div class="create-block" >
+  <div class="inputs">
+    <div class="name">
+      <p>Dish Name</p>
+      <input type="text" [(ngModel)]="Dish.name">
+    </div>
+
+    <div class="price">
+      <p>Price</p>
+      <input type="text" [(ngModel)]="Dish.price">
+    </div>
+  </div>
+  <div class="description">
+    <p>Description</p>
+    <textarea name="description" [(ngModel)]="Dish.description"></textarea>
+  </div>
+  <div style="display:flex;align-items:end;width:100%;">
+
+    <div class="ingredients">
+      <p>Ingredient</p>
+        <select name="ingredients" id="ingredients " [(ngModel)]="Ingredient">
+          <!-- <option value="volvo">Volvo</option> -->
+          <option *ngFor="let ingredient of Ingredients" [ngValue]="ingredient" >
+                  {{ingredient.name}}
+          </option>
+        </select>
+    </div>
+    <div class="dimension">
+      <p>Dimension</p>
+      <input type="text" [(ngModel)]="Ingredient.dimension">
+    </div>
+    <div class="quantity">
+      <p>Quantity</p>
+      <input type="number" [(ngModel)]="Ingredient.qty">
+    </div>
+    <button class="addIngredient" (click)="AddIngredient(Ingredient)">Add</button>
+  </div>
+  <div class="ingredient-list">
+    <div class="item" *ngFor="let item of AddedIngredients">
+      <p>Cheese</p>
+      <div class="delete"><img src="assets/images/remove.svg" alt="" (click)="DeleteIngredient(item.id)"></div>
+    </div>
+
+
+  </div>
+  <div class="image-video">
+    <div class="image">
+      <input type="file" name="upload" id="upload" class="upload-box" accept="image/*" (change)="handleUpload($event)" >
+      <label for="upload">Choose Photo</label>
+    </div>
+    <div class="video">
+      <input type="text" placeholder="Video URL" [(ngModel)]="Dish.videoURL">
+    </div>
+
+  </div>
+
+  <button class="saveButton" (click)="SaveDish()">{{buttonName}}</button>
+</div>

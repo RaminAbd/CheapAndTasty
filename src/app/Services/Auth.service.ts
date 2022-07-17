@@ -41,6 +41,8 @@ export class AuthService {
     )
   }
   SignOut(){
+    console.log("out");
+
     localStorage.setItem("token", "");
   }
 }

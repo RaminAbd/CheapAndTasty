@@ -1,1 +1,48 @@
-<p>orders works!</p>
+<div class="orders-wrapper">
+  <div class="header">
+    <h2>Orders</h2>
+  </div>
+  <div class="table">
+    <p-table #dt1
+         id="excel-table"
+         dataKey="id"
+         selectionMode="single"
+         [(selection)]="Order"
+         [showCurrentPageReport]="true"
+         styleClass="p-datatable-customers"
+         [columns]="cols"
+         [value]="Orders"
+         [autoLayout]="true"
+         [rows]="10"
+         [paginator]="true"
+         currentPageReportTemplate=" {first} - {last} of {totalRecords} ">
+
+  <ng-template pTemplate="header" let-column>
+    <tr style="border-top: none;">
+      <th *ngFor="let col of cols"  [ngStyle]="{'display':col.display}"  [ngStyle]="{'width': col.width}">
+        <div class="ui-table-sort-th">
+          <span>{{col.header }}</span>
+        </div>
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <tr  style="cursor: pointer;">
+      <td *ngFor="let col of columns" [ngStyle]="{'display':col.display}" [ngStyle]="{'width': col.width}">
+        <p *ngIf="col.field !== 'isCompleted'">{{rowData[col.field]}}</p>
+
+        <div *ngIf="col.field === 'isCompleted'" class="status">
+          <p  *ngIf="rowData[col.field] === false" class="statusProcessing">Processing</p>
+          <p  *ngIf="rowData[col.field] === true" class="statusDelivered">Delivered</p>
+        </div>
+
+        <div *ngIf="col.field === 'action'">
+          <div  (click)="edit(rowData)"><img src="assets/images/pencil.svg" alt=""></div>
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+  </div>
+</div>

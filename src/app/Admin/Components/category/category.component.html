@@ -2,4 +2,24 @@
   <div class="header">
     <h2>Category</h2>
   </div>
+  <div class="create">
+    <button (click)="CreateCategory()">Create Category</button>
+  </div>
+  <div class="create-block" *ngIf="disable">
+    <p>Category Name</p>
+    <input type="text" [(ngModel)]="CategoryName">
+    <button class="saveButton" (click)="SaveCategory()">{{buttonName}}</button>
+  </div>
+  <div class="category-list">
+    <p class="catHead">Created Categories</p>
+    <div class="list">
+      <div class="item"  *ngFor="let category of Categories">
+        <p>{{category.name}}</p>
+        <div class="actions">
+          <div class="edit" style="cursor: pointer" (click)="editCategory(category)"><img src="assets/images/pencil.svg" alt=""></div>
+          <div class="delete" style="cursor: pointer" (click)="deleteCategory(category.id)"><img src="assets/images/delete.svg" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

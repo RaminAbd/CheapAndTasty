@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
         console.log(this.SignInResponse);
         if(this.SignInResponse.token!=="" || this.SignInResponse.token!==null){
           console.log("girdi");
-          this.router.navigate([''])
+          this.router.navigate(['admin'])
         }
       },
       error => {

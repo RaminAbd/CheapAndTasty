@@ -1,1 +1,20 @@
-<p>dishes works!</p>
+<div class="dish-wrapper">
+  <div class="header">
+    <h2>Dishes</h2>
+  </div>
+  <div class="create" style="display:flex;align-items:end" >
+    <div class="category"  style="width:32%;margin-right:15px;">
+      <p style="margin:8px 0;">Category Name</p>
+      <select name="categories" id="categories" [(ngModel)]="Category">
+        <!-- <option value="volvo">Volvo</option> -->
+        <option *ngFor="let category of Categories" [ngValue]="category" >
+                {{category.name}}
+        </option>
+      </select>
+    </div>
+    <button (click)="CreateDish()">Create Dish</button>
+  </div>
+  <!-- *ngIf="disable" -->
+
+<router-outlet></router-outlet>
+</div>

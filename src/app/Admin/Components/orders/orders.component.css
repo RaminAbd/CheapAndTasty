@@ -1,0 +1,21 @@
+.status p{
+  width: 125px;
+  height: 27px;
+  left: 1081px;
+  top: 196px;
+  margin:0;
+
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #494F57;
+}
+.statusProcessing{
+  background: #FDCB47;
+}
+.statusDelivered{
+  background: #45DD70;
+}

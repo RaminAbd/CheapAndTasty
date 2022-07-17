@@ -1,0 +1,22 @@
+<div class="created-dishes">
+  <div class="header">
+    <h3>Created Dishes</h3>
+  </div>
+  <div class="item" *ngFor="let item of Dishes">
+    <div class="images">
+      <img [src]='item.imageURL' alt="">
+    </div>
+    <div class="name-price">
+      <p style="margin-right:15px;">{{item.name}},</p>
+      <p>  {{item.price}}GEL</p>
+    </div>
+    <div class="description">
+      <p>{{item.description}}</p>
+    </div>
+    <div class="ingredients">
+      <p *ngFor="let ingred of item.ingredients">{{ingred.ingredient.name}}</p>,
+    </div>
+  </div>
+
+
+</div>

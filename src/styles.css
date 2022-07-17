@@ -55,3 +55,63 @@ color: #333 !important;
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.table{
+  margin-top: 60px;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  border-color: #EEF2FF !important;
+  color: #fff !important;
+  border-radius: 5px;
+  outline: none !important;
+  background: #FDCB47 !important;
+}
+.p-datatable .p-paginator-bottom{
+  justify-content: end !important;
+}
+.p-paginator .p-paginator-pages .p-paginator-page:active {
+  border: none !important;
+  outline: none !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight:active {
+  border: none !important;
+  outline: none !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page:hover {
+  border-radius: 5px;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  font-size: 16px;
+  line-height: 14px;
+  color: rgba(26, 26, 26, 0.9);
+}
+.p-datatable .p-datatable-thead > tr > th{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #333333;
+  background:#fff !important;
+}
+.p-datatable .p-sortable-column.p-highlight {
+  background: #f8f9fa !important;
+  color: #FDCB47 !important;
+  outline: none !important;
+}
+
+  .p-datatable .p-sortable-column.p-highlight:active {
+    outline: none !important;
+  }
+
+.p-datatable .p-sortable-column:focus {
+  box-shadow: none !important;
+  outline: 0 none;
+}
+/* .p-datatable .p-sortable-column.p-highlight: */
+.p-datatable .p-sortable-column.p-highlight .p-sortable-column-icon {
+  color: #FDCB47!important;
+}

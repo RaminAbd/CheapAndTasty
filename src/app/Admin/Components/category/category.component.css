@@ -6,3 +6,104 @@ h2{
   line-height: 27px;
   color: #1A1A1A;
 }
+.create button{
+  width: 230px;
+height: 50px;
+left: 337px;
+top: 213px;
+margin-top: 30px;
+background: #4cd07d;
+border-radius: 8px;
+border: none;outline: none;
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 22px;
+text-align: center;
+
+color: #323232;
+
+
+}
+.create-block{
+  width: 400px;
+  display:flex;
+  flex-direction: column;
+}
+.create-block p{
+  margin-top: 30px;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+margin-bottom: 10px;
+line-height: 19px;
+
+color: #333333;
+}
+.create-block input{
+  width: 400px;
+height: 44px;
+left: 337px;
+top: 149px;
+padding:8px;
+background: #FFFFFF;
+border: 1px solid #7B8689;
+border-radius: 8px;
+}
+.create-block button{
+  width: 400px;
+height: 50px;
+left: 337px;
+top: 213px;
+margin-top: 20px;
+border:none;
+outline:none;
+background: #FDCB47;
+border-radius: 8px;
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+text-align: center;
+color: #323232;
+
+}
+.category-list p.catHead{
+  margin-top: 70px;;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  color: #1A1A1A;
+}
+.category-list .item{
+  height:55px;
+  width: 400px;
+  display: flex;
+    align-items: center;
+  border-bottom: 1px solid #ADADAD;
+  display: flex;
+  align-items: center;
+  justify-content:space-between
+}
+.actions{
+  display: flex;
+  align-items:center;
+  width: 50px;
+  justify-content:space-between;
+}
+.category-list .item:last-child{
+  border:none;
+}
+.category-list .item p{
+  margin:0;
+  font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+
+color: #333333;
+}
+.category-list .list{
+  margin-top: 20px;
+}

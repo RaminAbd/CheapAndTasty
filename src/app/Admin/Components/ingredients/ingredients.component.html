@@ -1,1 +1,26 @@
-<p>ingredients works!</p>
+<div class="category-wrapper">
+  <div class="header">
+    <h2>Ingredients</h2>
+  </div>
+  <div class="create">
+    <button (click)="CreateIngredient()">Create Category</button>
+  </div>
+  <div class="create-block" *ngIf="disable">
+    <div class="inputs">
+      <div class="name">
+        <p>Ingredient Name</p>
+        <input type="text" [(ngModel)]="IngredientRequest.name">
+      </div>
+      <div class="price">
+        <p>Ingredient Price</p>
+        <input type="text" [(ngModel)]="IngredientRequest.price">
+      </div>
+    </div>
+
+    <div class="image">
+      <input type="file" name="upload" id="upload" class="upload-box" accept="image/*" (change)="handleUpload($event)" >
+      <label for="upload">Choose Photo</label>
+    </div>
+    <button class="saveButton" (click)="SaveIngredient()">{{buttonName}}</button>
+  </div>
+</div>
