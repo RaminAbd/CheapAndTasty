@@ -15,6 +15,6 @@ export class AdminNavBarComponent implements OnInit {
   }
   Logout(){
     this.authService.SignOut();
-    this.router.navigate(['/login'])
+    this.router.navigate([''])
   }
 }

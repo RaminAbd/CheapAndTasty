@@ -3,8 +3,14 @@
 }
 .item .images{
   width: 168px;
-  height: 120px;
+  height: 135px;
   border-radius: 8px;
+  margin-right: 20px;
+}
+.item .images img{
+  width: 100%;
+  border-radius:15px;
+  height:135px;
 }
 .item .name-price{
   display:flex;
@@ -40,4 +46,32 @@ font-size: 15px;
 line-height: 18px;
 margin-top: 10px;
 color: #333333;
+}
+.block{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+}
+.block .actions{
+  display: flex;
+  align-items:center
+}
+.block .actions .edit{
+  margin-right: 10px;
+  cursor: pointer;
+  height: 30px;
+}
+.block .actions .edit img{
+  height: 30px;
+}
+.block .actions .delete{
+  cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+
 }

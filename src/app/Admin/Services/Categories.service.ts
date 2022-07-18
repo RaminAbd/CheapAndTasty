@@ -24,4 +24,5 @@ export class CategoryService {
   GetById(id:string){
     return this.http.get<ServiceResponse>(this.BaseUrl+`Categories/GetById/${id}`);
   }
+
 }

@@ -1,7 +1,7 @@
 <div class="login-page">
   <div class="login-form_container">
       <img src="assets/images/CheapAndTasty.svg" alt="logo" class="login-form_logo">
-      <h1>Sayta daxil olun!</h1>
+
       <p class="login-form_error-message">{{errorMessage}}</p>
       <form  class="login-form" [formGroup]="loginForm" >
           <div class="login-form_form-group">
@@ -20,11 +20,8 @@
           </div>
 
           <button type="submit" (click)="SignIn()">Daxil ol</button>
-          <p class="login-form_registration">
-              Hesabınız yoxdur? <a routerLink="/register" class="login-form_registration-link">
-                  Qeydiyyatdan keç.
-              </a>
-          </p>
+          <button type="submit" (click)="SignIn()" style="margin:0;"><a routerLink="/register" style="text-decoration:none;margin:0;color:#fff" class="login-form_registration-link">Register</a></button>
+
       </form>
 
   </div>

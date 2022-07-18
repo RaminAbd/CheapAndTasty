@@ -23,4 +23,24 @@
     </div>
     <button class="saveButton" (click)="SaveIngredient()">{{buttonName}}</button>
   </div>
+
+  <div class="list">
+    <h3>Created Ingredients</h3>
+    <div class="ingredient-item" *ngFor="let item of Ingredients">
+      <div class="item-image">
+        <img src="{{item.imageURL}}" alt="">
+      </div>
+      <div class="info-block">
+        <div class="name-price">
+          <p style="margin-right:10px ;">{{item.name}},</p>
+          <p>{{item.price}} GEL</p>
+        </div>
+        <div class="actions">
+          <div class="edit"  (click)="editCategory(item)"><img src="assets/images/pencil.svg" alt=""></div>
+          <div class="delete" style="cursor: pointer" (click)="deleteCategory(item.id)"><img src="assets/images/delete.svg" alt=""></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>

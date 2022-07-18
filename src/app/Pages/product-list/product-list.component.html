@@ -8,83 +8,37 @@
     </div>
     <div class="filters-and-categories">
       <div class="categories">
-        <div class="categoryItem"><p>All</p></div>
-        <div class="categoryItem"><p>All</p></div>
-        <div class="categoryItem"><p>All</p></div>
+        <div class="categoryItem" *ngFor="let category of Categories" (click)="GetAllDishesInCategory(category.id)"><p>{{category.name}}</p></div>
       </div>
       <div class="filters">
         <div class="filterItem">
           <p>Price</p>
           <div class="filterBox">
-            <!-- <input type="number"> -->
+            <div class="filterInputs">
+              <input type="number" [(ngModel)]="filterObject.From"> <span class="line"></span>  <input type="number" [(ngModel)]="filterObject.To">
+            </div>
+            <button class="filterBtn" (click)="Filter()">Apply</button>
           </div>
         </div>
       </div>
     </div>
     <div class="products">
-      <div class="productItem">
-        <div class="img"><img src="assets/images/burger.png" alt=""></div>
+      <div class="productItem" *ngFor="let dish of Dishes">
+        <div class="img"><img src="{{dish.imageURL}}" alt=""></div>
         <div class="productInfo">
           <div class="name-price">
-            <p>Burger</p>
-            <p>$19.90</p>
+            <p>{{dish.name}}</p>
+            <p>GEL{{dish.price}}</p>
           </div>
           <div class="link">
             <a href="">Watch Video</a>
           </div>
         </div>
       </div>
-      <div class="productItem">
-        <div class="img"><img src="assets/images/burger.png" alt=""></div>
-        <div class="productInfo">
-          <div class="name-price">
-            <p>Burger</p>
-            <p>$19.90</p>
-          </div>
-          <div class="link">
-            <a href="">Watch Video</a>
-          </div>
-        </div>
-      </div>
-      <div class="productItem">
-        <div class="img"><img src="assets/images/burger.png" alt=""></div>
-        <div class="productInfo">
-          <div class="name-price">
-            <p>Burger</p>
-            <p>$19.90</p>
-          </div>
-          <div class="link">
-            <a href="">Watch Video</a>
-          </div>
-        </div>
-      </div>
-      <div class="productItem">
-        <div class="img"><img src="assets/images/burger.png" alt=""></div>
-        <div class="productInfo">
-          <div class="name-price">
-            <p>Burger</p>
-            <p>$19.90</p>
-          </div>
-          <div class="link">
-            <a href="">Watch Video</a>
-          </div>
-        </div>
-      </div>
-      <div class="productItem">
-        <div class="img"><img src="assets/images/burger.png" alt=""></div>
-        <div class="productInfo">
-          <div class="name-price">
-            <p>Burger</p>
-            <p>$19.90</p>
-          </div>
-          <div class="link">
-            <a href="">Watch Video</a>
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
   <div class="loginForm">
-    <!-- <app-login></app-login> -->
+    <app-login *ngIf="showLogin"></app-login>
   </div>
 </div>

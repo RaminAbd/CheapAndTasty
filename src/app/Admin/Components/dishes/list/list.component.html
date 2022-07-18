@@ -2,21 +2,28 @@
   <div class="header">
     <h3>Created Dishes</h3>
   </div>
-  <div class="item" *ngFor="let item of Dishes">
+  <div class="item" *ngFor="let item of Dishes" style="display:flex;">
     <div class="images">
-      <img [src]='item.imageURL' alt="">
+      <img src="http://cheapandtasty-001-site1.ctempurl.com/Images/1006a699-33aa-4f82-8d26-1467aaad1532.jpg" alt="">
     </div>
-    <div class="name-price">
-      <p style="margin-right:15px;">{{item.name}},</p>
-      <p>  {{item.price}}GEL</p>
+    <div class="block">
+      <div class="name-price">
+        <p style="margin-right:15px;">{{item.name}},</p>
+        <p>  {{item.price}}GEL</p>
+      </div>
+      <div class="description">
+        <p>{{item.description}}</p>
+      </div>
+      <div class="ingredients">
+        <p *ngFor="let ingred of item.ingredients">{{ingred.ingredient.name}}</p>,
+      </div>
+      <div class="actions">
+        <div class="edit"  (click)="editCategory(item)"><img src="assets/images/pencil.svg" alt=""></div>
+        <div class="delete" style="cursor: pointer" (click)="deleteCategory(item.id)"><img src="assets/images/delete.svg" alt=""></div>
+      </div>
     </div>
-    <div class="description">
-      <p>{{item.description}}</p>
     </div>
-    <div class="ingredients">
-      <p *ngFor="let ingred of item.ingredients">{{ingred.ingredient.name}}</p>,
-    </div>
-  </div>
+
 
 
 </div>

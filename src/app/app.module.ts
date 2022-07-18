@@ -69,8 +69,9 @@ const routes: Routes = [
       canActivate: [AuthGuard],
     },]
   },
+  {path: 'products', component: ProductListComponent},
 
-  {path: '',canActivate: [AuthGuard], component: ProductListComponent},
+  {path: '', redirectTo: 'products', pathMatch: 'full'},
 ]
 @NgModule({
   declarations: [

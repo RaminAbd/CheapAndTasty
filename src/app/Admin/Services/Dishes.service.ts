@@ -20,4 +20,10 @@ export class DishService {
   GetAllDishes(){
     return this.http.get<ServiceResponse>(this.BaseUrl+"Dish/GetAllDishes");
   }
+  GetAllDishesInCategory(id:string){
+    return this.http.get<ServiceResponse>(this.BaseUrl+`Dish/GetAllDishesInCategory/${id}`);
+  }
+  Filter(object:any){
+    return this.http.get<ServiceResponse>(this.BaseUrl+`Dish/GetAllDishesInCategory`,{params:object});
+  }
 }

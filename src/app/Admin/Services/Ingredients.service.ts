@@ -18,4 +18,7 @@ export class IngredientService {
   Update(request:IngredientRequestDTO){
     return this.http.post<ServiceResponse>(this.BaseUrl+"Ingredients/Update", request)
   }
+  DeleteIngredientById(id:string){
+    return this.http.delete<ServiceResponse>(this.BaseUrl+`Ingredients/DeleteIngredientById/${id}`)
+  }
 }

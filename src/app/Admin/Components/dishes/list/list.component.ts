@@ -12,14 +12,24 @@ export class ListComponent implements OnInit {
   constructor(private dishService:DishService) { }
 
   ngOnInit(): void {
+   this.GetAllDishes();
+  }
+  GetAllDishes(){
     this.dishService.GetAllDishes().subscribe(dishes => {
       this.Dishes = dishes.data;
       console.log(this.Dishes);
-
     })
   }
   returnUrl(url:string){
     console.log(url);
     return url;
+  }
+  editCategory(item:any){
+
+  }
+  deleteCategory(id:string){
+    this.dishService.DeleteDish(id).subscribe(resp=>{
+      this.GetAllDishes();
+    })
   }
 }

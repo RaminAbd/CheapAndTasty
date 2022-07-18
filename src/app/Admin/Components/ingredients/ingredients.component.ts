@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IngredientService } from '../../Services/Ingredients.service';
 import { IngredientRequestDTO } from '../../../Models/IngredientRequestDTO';
+import { IngredientResponse } from '../../../Models/IngredientsResponse';
 
 
 @Component({
@@ -13,17 +14,25 @@ export class IngredientsComponent implements OnInit {
   buttonName:string;
   ingredientId:string;
   IngredientRequest:IngredientRequestDTO = new IngredientRequestDTO();
-
+  Ingredients:IngredientResponse[] = [];
   constructor(private ingredientService: IngredientService) { }
   imageChangedEvent:any;
   image:any;
   ngOnInit(): void {
+    this.GetAll();
+  }
+  GetAll(){
+    this.ingredientService.GetAll().subscribe(resp=>{
+      console.log(resp.data);
+      this.Ingredients = resp.data;
+    })
   }
   CreateIngredient(){
     this.ingredientService.CreateIngredient().subscribe(resp=>{
       this.ingredientId = resp.data.id;
       this.buttonName = "Create";
       this.disable=true
+
     })
   }
   SaveIngredient(){
@@ -34,6 +43,7 @@ export class IngredientsComponent implements OnInit {
       if(resp.isSuccess){
         this.disable=false;
         // this.GetAll();
+        this.GetAll()
       }
     })
   }
@@ -46,8 +56,25 @@ export class IngredientsComponent implements OnInit {
         var base64 = reader.result?.toString();
         if(base64!==null){
           this.image = base64?.split(',')[1];
+          // console.log(this.image);
+
           // this.extension=`.${file.name.split('.')[1]}`;
         }
     };
+  }
+  editCategory(item:any){
+    this.IngredientRequest = item;
+    this.ingredientId = item.id;
+    this.disable = true
+    // console.log(item);
+    this.IngredientRequest.image = this.image;
+    this.buttonName = "Update";
+    // console.log(this.IngredientRequest);
+  }
+  deleteCategory(itemId:string){
+    this.ingredientService.DeleteIngredientById(itemId).subscribe(resp=>{
+      console.log(resp);
+      this.GetAll();
+    })
   }
 }

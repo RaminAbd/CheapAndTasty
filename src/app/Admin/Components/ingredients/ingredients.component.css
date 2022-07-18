@@ -95,3 +95,65 @@ color: #323232;
     border: 1px dashed #FDCB47;
     border-radius: 8px;
 }
+
+.list h3{
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 22px;
+line-height: 27px;
+/* identical to box height */
+margin-top: 45px;
+
+color: #1A1A1A;
+}
+.list .item-image img{
+  width: 168px;
+height: 120px;
+border-radius: 8px;
+margin-right: 15px;
+}
+
+.list .ingredient-item{
+  height: 120px;
+  margin-top: 21px;
+  display: flex;
+}
+.name-price{
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+
+color: #333333;
+display:flex;
+}
+.info-block{
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.info-block .actions{
+  display: flex;
+  align-items:center
+}
+.info-block .actions .edit{
+  margin-right: 10px;
+  cursor: pointer;
+  height: 30px;
+}
+.info-block .actions .edit img{
+  height: 30px;
+}
+.info-block .actions .delete{
+  cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+
+}
