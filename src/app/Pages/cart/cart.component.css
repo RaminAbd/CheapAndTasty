@@ -1,0 +1,100 @@
+.cart-info{
+  padding: 55px 35px;
+}
+.cart-info .heading{
+  font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    color: #323232;
+    margin-bottom: 50px;
+}
+.cart-info .address p{
+  font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #747474;
+}
+.cart-info .address h4{
+  font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 10px;
+    color: #323232;
+    margin-bottom: 40px;
+}
+.cart-info .delete{
+  cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+
+}
+.cart-info .item .row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart-info .item .row .name{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #323232;
+}
+.cart-info .price{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #323232;
+}
+.line{
+  width: 424px;
+height: 0px;
+left: 987px;
+top: 691px;
+
+border: 1px solid #7B8689;
+}
+.totals{
+  margin-top: 50px;
+}
+.totals .row, .last-total .row{
+  display: flex;
+  align-items:center;
+  margin-bottom:15px;
+  justify-content: space-between;
+}
+.last-total .row{
+  margin-top: 15px;
+}
+.totals .row p, .last-total .row p{
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 19px;
+
+color: #323232;
+}
+.totals .row .price, .last-total .row .price{
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 19px;
+
+color: #323232;
+}

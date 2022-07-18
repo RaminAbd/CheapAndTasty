@@ -75,12 +75,10 @@ const routes: Routes = [
   },
   {path: 'products',
   component: ProductsComponent,
-  canActivate: [AuthGuard],
   children: [
     {
       path: 'product-list',
-      component: ProductListComponent,
-      canActivate: [AuthGuard],
+      component: ProductListComponent
     },
     {
       path: 'product-info/:id',
