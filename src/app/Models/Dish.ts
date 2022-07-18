@@ -5,7 +5,7 @@ export class Dish{
         imageURL: string;
         videoURL: string;
         description: string;
-        ingredients?: Ingredient[]=[];
+        ingredients: any[]=[];
         inregientsPrice: number;
         price: number;
         name: string;

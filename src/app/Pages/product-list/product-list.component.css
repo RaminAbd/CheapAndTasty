@@ -40,7 +40,7 @@
   margin-bottom: 15px;
   cursor: pointer;
 }
-.categoryItem:first-child{
+.categoryItem.active{
   background: #FDCB47;
   border: 1px solid #FDCB47;
 }
@@ -190,6 +190,10 @@ input:focus{
 .loginForm{
   width: 480px;
   background: #dfdfdf;
+  height: 100vh;
+    position: fixed;
+    right: 0;
+
 }
 .login-page{
   width: 100% !important;

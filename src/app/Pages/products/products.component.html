@@ -1,0 +1,19 @@
+<div class="main-wrapper">
+  <div class="productList">
+    <div class="logo">
+      <img src="assets/images/CheapAndTasty.svg" alt="">
+    </div>
+    <router-outlet></router-outlet>
+
+  </div>
+  <div class="loginForm">
+    <app-login *ngIf="showLogin"></app-login>
+    <div *ngIf="haveOrders" class="haveNoOrders">
+      <img src="assets/images/CheapAndTasty.svg" alt="">
+      <h3 style="margin-top:25px">You have no orders.</h3>
+    </div>
+    <div class="cart">
+      <app-cart></app-cart>
+    </div>
+  </div>
+</div>

@@ -1,19 +1,16 @@
-<div class="main-wrapper">
-  <div class="productList">
-    <div class="logo">
-      <img src="assets/images/CheapAndTasty.svg" alt="">
-    </div>
+
     <div class="banner">
       <img src="assets/images/banner.png" alt="">
     </div>
     <div class="filters-and-categories">
       <div class="categories">
-        <div class="categoryItem" *ngFor="let category of Categories" (click)="GetAllDishesInCategory(category.id)"><p>{{category.name}}</p></div>
+        <div class="categoryItem" [class.active]="clickedAll"  (click)="ClickedRow(-1)"><p>All</p></div>
+        <div class="categoryItem" *ngFor="let category of Categories; let i = index" (click)="GetAllDishesInCategory(category.id)" (click)="ClickedRow(i)" [class.active]="i == HighlightRow"><p>{{category.name}}</p></div>
       </div>
       <div class="filters">
-        <div class="filterItem">
-          <p>Price</p>
-          <div class="filterBox">
+        <div class="filterItem" (click)="showFilterBox=true" style="cursor:pointer;">
+          <p >Price</p>
+          <div class="filterBox" *ngIf="showFilterBox">
             <div class="filterInputs">
               <input type="number" [(ngModel)]="filterObject.From"> <span class="line"></span>  <input type="number" [(ngModel)]="filterObject.To">
             </div>
@@ -30,15 +27,12 @@
             <p>{{dish.name}}</p>
             <p>GEL{{dish.price}}</p>
           </div>
-          <div class="link">
-            <a href="">Watch Video</a>
+          <div class="link" style="cursor:pointer;">
+            <a (click)="productInfo(dish.id)">Watch Video</a>
           </div>
         </div>
       </div>
 
     </div>
-  </div>
-  <div class="loginForm">
-    <app-login *ngIf="showLogin"></app-login>
-  </div>
-</div>
+
+

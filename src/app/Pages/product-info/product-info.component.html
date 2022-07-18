@@ -1,0 +1,30 @@
+<div class="productInfo">
+  <div class="video">
+     <youtube-player [videoId]="Dish.videoURL" [height]="392" width="100%" suggestedQuality="highres"></youtube-player>
+  </div>
+  <div class="name">
+    <h3>{{Dish.name}}</h3>
+  </div>
+  <div class="ingredients" style="display:flex;">
+    <p style="margin-right: 5px;" *ngFor="let ingredient of Dish.ingredients">{{ingredient.ingredient.name}},</p>
+  </div>
+  <div class="buttons">
+    <button class="ingredients" (click)="getIngredients()">Get Ingredients - {{ingredientsPrice}} GEL</button>
+    <button class="dish">Get Dish - {{dishPrice}} GEL</button>
+  </div>
+  <div class="line"></div>
+    <div class="products">
+      <div class="productItem" *ngFor="let dish of Dishes">
+        <div class="img"><img src="{{dish.imageURL}}" alt=""></div>
+        <div class="productInfo">
+          <div class="name-price">
+            <p>{{dish.name}}</p>
+            <p>GEL{{dish.price}}</p>
+          </div>
+          <div class="link" style="cursor:pointer;">
+            <a (click)="productInfo(dish.id)">Watch Video</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

@@ -115,3 +115,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .p-datatable .p-sortable-column.p-highlight .p-sortable-column-icon {
   color: #FDCB47!important;
 }
+iframe{
+  border-radius:10px !important;
+}

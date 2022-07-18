@@ -31,6 +31,7 @@ export class AuthService {
     return this.http.post<SignInResponse>(this.BaseUrl + "Accounts/SignIn", requestObject).pipe(
       tap(data=>{
         if(data.token!=="" || data.token!==null){
+          localStorage.setItem("userId", data.id)
           localStorage.setItem("token", data.token);
           localStorage.setItem("userName", requestObject.userName);
           localStorage.setItem("password", requestObject.password);

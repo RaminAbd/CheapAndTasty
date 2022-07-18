@@ -1,0 +1,39 @@
+.main-wrapper{
+  display: flex;
+  width: 100%;
+}
+.productList{
+  width: calc(100% - 480px);
+  padding: 45px 65px 0 65px;
+}
+.logo{
+  margin-bottom: 35px;
+}
+.loginForm{
+  width: 480px;
+  background: #dfdfdf;
+  height: 100vh;
+    position: fixed;
+    right: 0;
+
+}
+.login-page{
+  width: 100% !important;
+}
+.haveNoOrders{
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.haveNoOrders h3{
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 20px;
+
+color: #747474;
+}

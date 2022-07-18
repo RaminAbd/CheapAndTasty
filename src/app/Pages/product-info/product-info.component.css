@@ -1,0 +1,95 @@
+h3{
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 39px;
+/* identical to box height */
+
+margin: 16px 0;
+color: #323232;
+}
+
+p{
+  font-family: 'Inter';
+font-style: italic;
+font-weight: 500;
+font-size: 16px;
+line-height: 19px;
+
+color: #747474;
+
+}
+
+.products{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: start;
+}
+.productItem{
+  width: 30%;
+  margin-right: 35px;
+  margin-bottom: 35px;
+}
+.productItem .img{
+  width: 100%;
+  height: 178.57px;
+  margin: 0;
+}
+.productItem img{
+  width: 100%;
+    border-radius: 8px;
+    height: 100%;
+}
+.productItem:nth-child(3n){
+  margin-right: 0!important;
+}
+.productInfo .name-price{
+  display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.productInfo .name-price p{
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+margin-bottom: 5px;
+
+color: #323232;
+}
+.productInfo .link a{
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+text-decoration: none;
+color: #8C8C8C;
+}
+.line{
+  width: 100%;
+height: 0px;
+left: 70px;
+top: 638px;
+margin: 35px 0 50px 0;
+border: 1px solid #7B8689;
+}
+.buttons button{
+  width: 32%;
+  height: 40px;
+  left: 987px;
+  top: 902px;
+  margin-right: 20px;
+  margin-top: 25px;
+  background: #FDCB47;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}

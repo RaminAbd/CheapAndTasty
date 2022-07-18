@@ -24,6 +24,9 @@ export class DishService {
     return this.http.get<ServiceResponse>(this.BaseUrl+`Dish/GetAllDishesInCategory/${id}`);
   }
   Filter(object:any){
-    return this.http.get<ServiceResponse>(this.BaseUrl+`Dish/GetAllDishesInCategory`,{params:object});
+    return this.http.get<ServiceResponse>(this.BaseUrl+`Dish/Filter`,{params:object});
+  }
+  GetById(id:string){
+    return this.http.get<ServiceResponse>(this.BaseUrl+`Dish/GetById/${id}`);
   }
 }

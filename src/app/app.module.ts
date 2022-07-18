@@ -21,6 +21,10 @@ import { TableModule } from 'primeng/table';
 import {DropdownModule} from 'primeng/dropdown';
 import { DishComponent } from './Admin/Components/dishes/dish/dish.component';
 import { ListComponent } from './Admin/Components/dishes/list/list.component';
+import { YouTubePlayerModule} from '@angular/youtube-player';
+import { ProductInfoComponent } from './Pages/product-info/product-info.component';
+import { ProductsComponent } from './Pages/products/products.component';
+import { CartComponent } from './Pages/cart/cart.component';
 const routes: Routes = [
   {path: 'register', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
@@ -69,7 +73,26 @@ const routes: Routes = [
       canActivate: [AuthGuard],
     },]
   },
-  {path: 'products', component: ProductListComponent},
+  {path: 'products',
+  component: ProductsComponent,
+  canActivate: [AuthGuard],
+  children: [
+    {
+      path: 'product-list',
+      component: ProductListComponent,
+      canActivate: [AuthGuard],
+    },
+    {
+      path: 'product-info/:id',
+      component: ProductInfoComponent,
+      canActivate: [AuthGuard],
+    },
+    {
+      path: '',
+      redirectTo: 'product-list',
+      pathMatch: 'full'
+    },
+  ]},
 
   {path: '', redirectTo: 'products', pathMatch: 'full'},
 ]
@@ -86,7 +109,10 @@ const routes: Routes = [
     DishesComponent,
     DishComponent,
     IngredientsComponent,
-    ListComponent
+    ListComponent,
+    ProductInfoComponent,
+    ProductsComponent,
+    CartComponent
 
   ],
   imports: [
@@ -96,6 +122,7 @@ const routes: Routes = [
     DropdownModule,
     TableModule,
     HttpClientModule,
+    YouTubePlayerModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
