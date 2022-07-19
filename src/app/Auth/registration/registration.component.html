@@ -1,81 +1,86 @@
 <div class="registration-page">
   <div class="registration-form_container">
       <img src="assets/images/CheapAndTasty.svg" alt="logo" class="registration-form_logo">
-      <h1>Qeydiyyatdan keçin!</h1>
+      <h1>Please Register!</h1>
       <p class="registration-form_error-message">{{errorMessage}}</p>
       <form class="registration-form" [formGroup]="registrationForm">
           <div class="registration-form_flex">
               <div class="registration-form_flex-top">
                   <!-- id start-->
                   <div class="registration-form_form-group">
-                      <label for="userName">userName</label>
+                      <label for="userName">Username</label>
                       <input type="text" formControlName="userName" autocomplete="off">
                       <p *ngIf="!validateRequired('userName')" class="registration-form_error-message">
-                        userName daxil edin!
+                        Enter Username!
                       </p>
                   </div>
                   <!-- id end-->
                   <!-- phone start-->
                   <div class="registration-form_form-group">
-                      <label for="phoneNumber">Telefon nömrəsi</label>
+                      <label for="phoneNumber">Phone Number</label>
                       <input type="tel" formControlName="phoneNumber" autocomplete="off">
                       <p *ngIf="!validateRequired('phoneNumber')" class="registration-form_error-message">
-                          Telefon nömrəsini daxil edin!
+                          Enter Phone Number!
                       </p>
                       <p *ngIf="!validatePattern('phoneNumber')" class="registration-form_error-message">
-                          Telefon nömrəsini düzgün daxil edin!
+                          Enter Correct Phone Number!
                       </p>
                   </div>
                   <!-- phone end-->
               </div>
-              <div class="registration-form_flex-bottom">
+              <div class="row" style="display:flex;">
+                <div class="registration-form_flex-bottom">
                   <!-- password start-->
                   <div class="registration-form_form-group">
-                      <label for="password">Şifrə</label>
+                      <label for="password">Password</label>
                       <input type="password" formControlName="password" autocomplete="off">
                       <p *ngIf="!validateRequired('password')" class="registration-form_error-message">
-                          Şifrəni daxil edin!
+                          Enter Password!
                       </p>
                       <p *ngIf="!validatePattern('password')" class="registration-form_error-message">
-                          Şifrə ən azı 6 rəqəmdən və bir böyük <br> hərfdən ibarət olmalıdır!
+                          Password must contain at least 6 numbers <br> and one capital letter!
                       </p>
                   </div>
               </div>
               <div class="registration-form_flex-bottom">
                 <!-- password start-->
                 <div class="registration-form_form-group">
-                    <label for="firstName">firstName</label>
+                    <label for="firstName">First Name</label>
                     <input type="firstName" formControlName="firstName" autocomplete="off">
                     <p *ngIf="!validateRequired('firstName')" class="registration-form_error-message">
-                      firstName daxil edin!
+                      Enter Your First Name!
                     </p>
                 </div>
             </div>
-            <div class="registration-form_flex-bottom">
-              <!-- password start-->
-              <div class="registration-form_form-group">
-                  <label for="lastName">lastName</label>
-                  <input type="lastName" formControlName="lastName" autocomplete="off">
-                  <p *ngIf="!validateRequired('lastName')" class="registration-form_error-message">
-                    lastName daxil edin!
-                  </p>
               </div>
-          </div>
-          <div class="registration-form_flex-bottom">
-            <!-- password start-->
-            <div class="registration-form_form-group">
-                <label for="address">address</label>
-                <input type="address" formControlName="address" autocomplete="off">
-                <p *ngIf="!validateRequired('address')" class="registration-form_error-message">
-                    Şifrəni daxil edin!
-                </p>
-            </div>
-        </div>
+<div class="row" style="display:flex;">
+  <div class="registration-form_flex-bottom">
+    <!-- password start-->
+    <div class="registration-form_form-group">
+        <label for="lastName">Last Name</label>
+        <input type="lastName" formControlName="lastName" autocomplete="off">
+        <p *ngIf="!validateRequired('lastName')" class="registration-form_error-message">
+          Enter Your Last Name!
+        </p>
+    </div>
+</div>
+<div class="registration-form_flex-bottom">
+  <!-- password start-->
+  <div class="registration-form_form-group">
+      <label for="address">Address</label>
+      <input type="address" formControlName="address" autocomplete="off">
+      <p *ngIf="!validateRequired('address')" class="registration-form_error-message">
+          Enter Your Address!
+      </p>
+  </div>
+</div>
+</div>
+
           </div>
           <button type="submit" (click)="signUp()">Davam et</button>
           <p class="registration-form_login">
-              Hesabınız var? <a routerLink="/login" class="registration-form_login-link">
-                  Daxil ol.
+              Do You Have an Account? <a routerLink="/login" class="registration-form_login-link">
+                  Signin.
               </a>
           </p>
       </form>

@@ -1,5 +1,5 @@
 .registration-page {
-  background: url('../../../assets/images/background.png');
+  /* background: url('../../../assets/images/background.png'); */
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -98,7 +98,9 @@
 }
 
 .registration-page .registration-form button:hover {
-  background: var(--primary-hover)
+  /* background: var(--primary-hover)
+   */
+   cursor: pointer;
 }
 
 .registration-page .registration-form button:active {

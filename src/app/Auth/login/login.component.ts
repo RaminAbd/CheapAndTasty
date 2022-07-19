@@ -13,7 +13,7 @@ import { AuthService } from '../../Services/Auth.service';
 export class LoginComponent implements OnInit {
   showErrorMessage = false;
   errorMessage: string | null = null;
-
+  isLoggedIn = false;
   loginForm!: FormGroup;
   SignInRequest:SignInRequest = new SignInRequest();
   SignInResponse:SignInResponse = new SignInResponse();
@@ -28,9 +28,7 @@ export class LoginComponent implements OnInit {
 
   submitHandler(loginForm: any):void {
     if(this.loginForm.valid){
-      console.log(loginForm, this.showErrorMessage);
     } else {
-      console.log("not valid");
       this.showErrorMessage = true;
     }
   }
@@ -54,22 +52,14 @@ export class LoginComponent implements OnInit {
     this.SignInRequest = this.loginForm.value;
     if(this.loginForm.valid){
       this.authService.SignIn(this.SignInRequest).subscribe(data=>{
-
         this.SignInResponse = data;
-        console.log(this.SignInResponse);
         if(this.SignInResponse.token!=="" || this.SignInResponse.token!==null){
-          console.log("girdi");
           this.router.navigate(['admin'])
         }
       },
       error => {
-        // error.error.forEach((e:any) => {
-        //   if(e.title === "DuplicateUserName"){
-        //     this.errorMessage = "Bu seriyalı hesab artıq mövcuddur!"
-        //   }
-        // });
         console.log("error",error);
-        this.errorMessage = "login və ya şifrə yanlışdır!"
+        this.errorMessage = "Login or Password is incorrect!"
 
       })
     } else {

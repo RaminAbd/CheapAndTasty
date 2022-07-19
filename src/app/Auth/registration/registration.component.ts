@@ -74,7 +74,7 @@ export class RegistrationComponent implements OnInit {
         console.log(error);
         error.error.forEach((e:any) => {
           if(e.code === "DuplicateUserName"){
-            this.errorMessage = "Bu seriyalı hesab artıq mövcuddur!"
+            this.errorMessage = "This account is now available!"
           }
         });
 
@@ -83,7 +83,7 @@ export class RegistrationComponent implements OnInit {
     else{
       console.log("not valid");
       this.showErrorMessage = true;
-      this.mismatchPasswordError = "Şifrələr uyğun gəlmir!";
+      this.mismatchPasswordError = "Passwords do not match!";
     }
   }
 

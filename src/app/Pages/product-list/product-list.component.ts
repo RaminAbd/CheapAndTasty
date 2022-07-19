@@ -39,34 +39,34 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.showLogin = this.authService.isLoggedIn ? false : true;
-    console.log(this.showLogin);
+    // console.log(this.showLogin);
     this.GetAllDishes();
     this.GetAllCategories();
   }
   GetAllDishes(){
     this.dishService.GetAllDishes().subscribe(resp =>{
       this.Dishes = resp.data
-      console.log(resp.data);
+      // console.log(resp.data);
 
     })
   }
   GetAllCategories(){
     this.categoryService.GetAll().subscribe(resp =>{
       this.Categories  = resp.data
-      console.log(resp.data);
+      // console.log(resp.data);
 
     })
   }
   GetAllDishesInCategory(id:string){
-    console.log(id);
+    // console.log(id);
     this.dishService.GetAllDishesInCategory(id).subscribe(resp =>{
       this.Dishes = resp.data
     })
   }
   Filter(){
-    console.log(this.filterObject);
+    // console.log(this.filterObject);
     this.dishService.Filter(this.filterObject).subscribe(resp =>{
-      console.log(resp.data);
+      // console.log(resp.data);
       this.Dishes = resp.data;
       this.showFilterBox = false
     })

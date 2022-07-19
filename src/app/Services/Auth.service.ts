@@ -32,6 +32,7 @@ export class AuthService {
       tap(data=>{
         if(data.token!=="" || data.token!==null){
           localStorage.setItem("userId", data.id)
+          localStorage.setItem("address", data.address)
           localStorage.setItem("token", data.token);
           localStorage.setItem("userName", requestObject.userName);
           localStorage.setItem("password", requestObject.password);

@@ -1,8 +1,13 @@
 <div class="cart-info">
+
   <h3 class="heading">My Orders</h3>
   <div class="address">
     <p>Delivery address</p>
-    <h4>1341 Morris Street</h4>
+    <h4 *ngIf="!showAddressInput">{{address}} <span (click)="editAddress()" style="margin-left:15px; cursor:pointer"><img src="assets/images/edit-address.svg" alt=""></span></h4>
+    <div *ngIf="showAddressInput" class="addressInput">
+      <input type="text" [(ngModel)]="address">
+      <button (click)="applyAddress()">Change</button>
+    </div>
   </div>
   <div class="cartItemList">
     <div class="item" *ngFor="let item of cartResponse.cartItems">
@@ -22,5 +27,8 @@
   <div class="line"></div>
   <div class="last-total">
     <div class="row"><p>Total</p><p class="price">{{totalPrice}} GEL</p></div>
+  </div>
+  <div class="checkOut">
+    <button (click)="CreateOrder()">Check Out</button>
   </div>
 </div>

@@ -15,6 +15,7 @@
   color: var(--text-primary-dark);
   border-radius: 16px;
   width: fit-content;
+
   /* box-shadow: 0px 10px 30px 10px rgba(51, 51, 51, 0.05); */
 }
 
@@ -52,10 +53,10 @@
 .login-page .login-form .login-form_form-group input {
   height: 50px;
   width: 350px;
-  background: #FFFFFF;
+  background: none !important;
   margin-bottom: 16px;
   padding: 0 16px;
-  border: 1px solid var(--border-grey);
+  border: 1px solid #7B8689;
   border-radius: 8px;
 }
 

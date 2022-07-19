@@ -14,4 +14,7 @@ export class OrderService {
   CompeleteOrder(orderId:string){
     return this.http.get<ServiceResponse>(this.BaseUrl+`Orders/CompeleteOrder/${orderId}`);
   }
+  CreateOrder(orderObj:any){
+    return this.http.post<ServiceResponse>(this.BaseUrl+"Orders/CreateOrder", orderObj)
+  }
 }

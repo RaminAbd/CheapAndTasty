@@ -4,6 +4,7 @@ import { DishService } from '../../Admin/Services/Dishes.service';
 import { Dish } from '../../Models/Dish';
 import { CartRequestDTO } from '../../Models/CartRequestDTO';
 import { CartRequestItem } from '../../Models/CartRequestItem';
+import { CartService } from '../../Admin/Services/Cart.service';
 
 @Component({
   selector: 'app-product-info',
@@ -17,18 +18,20 @@ export class ProductInfoComponent implements OnInit {
   ingredientsPrice:number=0;
   dishPrice:number=0;
   userId:string;
-  constructor( private router:Router, private route:ActivatedRoute,private dishService:DishService) { }
+  constructor( private router:Router, private route:ActivatedRoute,private dishService:DishService, private cartService:CartService) { }
 
   ngOnInit(): void {
     this.productId = this.route.snapshot.paramMap.get('id');
     this.userId = localStorage.getItem('userId') as string;
     this.GetById(this.productId)
     this.GetAllDishes();
+
   }
   GetById(id:string){
     this.dishService.GetById(id).subscribe(resp =>{
-      console.log(resp.data);
       this.Dish = resp.data
+      console.log(this.Dish);
+
       this.dishPrice = this.Dish.price;
       this.ingredientsPrice=0;
       this.Dish.ingredients?.forEach((item:any)=>{
@@ -40,27 +43,41 @@ export class ProductInfoComponent implements OnInit {
   GetAllDishes(){
     this.dishService.GetAllDishes().subscribe(resp =>{
       this.Dishes = resp.data
-      console.log(resp.data);
     })
   }
   productInfo(id:string){
-    console.log(id);
-
     this.router.navigate(['products/product-info/',id])
   }
   cartRequest:CartRequestDTO = new CartRequestDTO();
   getIngredients(){
     this.cartRequest.id = this.userId;
-    var ingredientObj:CartRequestItem = new CartRequestItem();
-
     this.Dish.ingredients.forEach((item:any)=>{
+      var ingredientObj:CartRequestItem = new CartRequestItem();
       ingredientObj.name = item.ingredient.name
       ingredientObj.price = item.ingredient.price
       ingredientObj.qty = item.qty;
-      console.log(ingredientObj);
       this.cartRequest.items.push(ingredientObj);
     })
-    console.log(this.cartRequest);
-
+    this.cartService.AddItems(this.cartRequest).subscribe(resp=>{
+      this.router.navigate(['products'])
+        .then(() => {
+          window.location.reload();
+        });
+    })
   }
+  getDish(){
+    this.cartRequest.id = this.userId;
+    var obj:CartRequestItem = new CartRequestItem();
+    obj.name = this.Dish.name;
+    obj.price = this.Dish.price;
+    obj.qty = 1;
+    this.cartRequest.items.push(obj);
+    this.cartService.AddItems(this.cartRequest).subscribe(resp=>{
+      this.router.navigate(['products'])
+        .then(() => {
+          window.location.reload();
+        });
+    })
+  }
+
 }

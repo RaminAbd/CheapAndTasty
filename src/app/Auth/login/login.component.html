@@ -5,22 +5,22 @@
       <p class="login-form_error-message">{{errorMessage}}</p>
       <form  class="login-form" [formGroup]="loginForm" >
           <div class="login-form_form-group">
-              <label for="userName">userName</label>
+              <label for="userName">Username</label>
               <input type="text" formControlName="userName" autocomplete="off">
               <p *ngIf="!validateRequired('userName')" class="login-form_id-error-message">
-                  userName daxil edin!
+                  Enter User Name!
               </p>
           </div>
           <div class="login-form_form-group">
-              <label for="password">Şifrə</label>
+              <label for="password">Password</label>
               <input type="password" formControlName="password" autocomplete="off">
               <p *ngIf="!validateRequired('password')" class="login-form_password-error-message">
-                  Şifrəni daxil edin!
+                  Enter Password!
               </p>
           </div>
 
-          <button type="submit" (click)="SignIn()">Daxil ol</button>
-          <button type="submit" (click)="SignIn()" style="margin:0;"><a routerLink="/register" style="text-decoration:none;margin:0;color:#fff" class="login-form_registration-link">Register</a></button>
+          <button type="submit" (click)="SignIn()">Sign In</button>
+          <button type="submit" style="margin:0;background: #7B8689"><a routerLink="/register" style="text-decoration:none;margin:0;color:#fff;" class="login-form_registration-link">Register</a></button>
 
       </form>
 

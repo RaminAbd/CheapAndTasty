@@ -1,3 +1,4 @@
+
 .cart-info{
   padding: 55px 35px;
 }
@@ -97,4 +98,39 @@ font-size: 16px;
 line-height: 19px;
 
 color: #323232;
+}
+
+.checkOut button {
+  margin: 24px 0px;
+  width: 100%;
+  font-size: 18px;
+  padding: 14px;
+  background: #FDCB47;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.addressInput input{
+  width: 199px;
+  height: 33px;
+  left: 271px;
+  top: 463px;
+  padding: 8px;
+  margin: 10px 0 40px 0;
+  background: none;
+  border: 1px solid #7B8689;
+  border-radius: 5px;
+}
+.addressInput button{
+  width: 60px;
+  height: 33px;
+  margin-left: 10px;
+  border: none;
+  outline: none;
+  left: 271px;
+  cursor: pointer;
+  top: 664px;
+  background: #FDCB47;
+  border-radius: 5px;
 }
