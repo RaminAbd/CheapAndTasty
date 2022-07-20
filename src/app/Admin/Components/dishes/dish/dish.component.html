@@ -2,17 +2,17 @@
   <div class="inputs">
     <div class="name">
       <p>Dish Name</p>
-      <input type="text" [(ngModel)]="Dish.name">
+      <input type="text" [(ngModel)]="DishObject.name">
     </div>
 
     <div class="price">
       <p>Price</p>
-      <input type="text" [(ngModel)]="Dish.price">
+      <input type="text" [(ngModel)]="DishObject.price">
     </div>
   </div>
   <div class="description">
     <p>Description</p>
-    <textarea name="description" [(ngModel)]="Dish.description"></textarea>
+    <textarea name="description" [(ngModel)]="DishObject.description"></textarea>
   </div>
   <div style="display:flex;align-items:end;width:100%;">
 
@@ -37,7 +37,7 @@
   </div>
   <div class="ingredient-list">
     <div class="item" *ngFor="let item of AddedIngredients">
-      <p>Cheese</p>
+      <p>{{item.ingredient.name}}</p>
       <div class="delete"><img src="assets/images/remove.svg" alt="" (click)="DeleteIngredient(item.id)"></div>
     </div>
 
@@ -49,7 +49,7 @@
       <label for="upload">Choose Photo</label>
     </div>
     <div class="video">
-      <input type="text" placeholder="Video URL" [(ngModel)]="Dish.videoURL">
+      <input type="text" placeholder="Video URL" [(ngModel)]="DishObject.videoURL">
     </div>
 
   </div>

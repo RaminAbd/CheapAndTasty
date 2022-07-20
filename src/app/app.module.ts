@@ -25,6 +25,9 @@ import { YouTubePlayerModule} from '@angular/youtube-player';
 import { ProductInfoComponent } from './Pages/product-info/product-info.component';
 import { ProductsComponent } from './Pages/products/products.component';
 import { CartComponent } from './Pages/cart/cart.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import { OrderDialogComponent } from './Admin/Components/orders/order-dialog/order-dialog.component';
 const routes: Routes = [
   {path: 'register', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
@@ -110,7 +113,8 @@ const routes: Routes = [
     ListComponent,
     ProductInfoComponent,
     ProductsComponent,
-    CartComponent
+    CartComponent,
+    OrderDialogComponent,
 
   ],
   imports: [
@@ -122,7 +126,9 @@ const routes: Routes = [
     HttpClientModule,
     YouTubePlayerModule,
     ReactiveFormsModule,
-    RouterModule.forChild(routes)
+    MatDialogModule,
+    RouterModule.forChild(routes),
+    BrowserAnimationsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: tokenInterceptor, multi: true},

@@ -8,26 +8,26 @@ import { AuthService } from '../../Services/Auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   showErrorMessage = false;
   errorMessage: string | null = null;
   isLoggedIn = false;
   loginForm!: FormGroup;
-  SignInRequest:SignInRequest = new SignInRequest();
-  SignInResponse:SignInResponse = new SignInResponse();
-  constructor(private router:Router,private authService: AuthService) { }
+  SignInRequest: SignInRequest = new SignInRequest();
+  SignInResponse: SignInResponse = new SignInResponse();
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
       userName: new FormControl(null, [Validators.required]),
-      password: new FormControl(null, [Validators.required])
-    })
+      password: new FormControl(null, [Validators.required]),
+    });
   }
 
-  submitHandler(loginForm: any):void {
-    if(this.loginForm.valid){
+  submitHandler(loginForm: any): void {
+    if (this.loginForm.valid) {
     } else {
       this.showErrorMessage = true;
     }
@@ -35,33 +35,47 @@ export class LoginComponent implements OnInit {
 
   validatePattern(value: string) {
     return (
-      ((this.loginForm.controls[value].valid || this.loginForm.controls[value].untouched) ||
-      !(this.loginForm.controls[value].errors?.['pattern']))
-    )
+      this.loginForm.controls[value].valid ||
+      this.loginForm.controls[value].untouched ||
+      !this.loginForm.controls[value].errors?.['pattern']
+    );
   }
-
 
   validateRequired(value: string) {
     return (
-      ((this.loginForm.controls[value].valid || this.loginForm.controls[value].untouched) ||
-      !(this.loginForm.controls[value].errors?.['required'])) &&
-      (!this.showErrorMessage || !(this.loginForm.controls[value].errors?.['required']))
-    )
+      (this.loginForm.controls[value].valid ||
+        this.loginForm.controls[value].untouched ||
+        !this.loginForm.controls[value].errors?.['required']) &&
+      (!this.showErrorMessage ||
+        !this.loginForm.controls[value].errors?.['required'])
+    );
   }
-  SignIn(){
+  SignIn() {
     this.SignInRequest = this.loginForm.value;
-    if(this.loginForm.valid){
-      this.authService.SignIn(this.SignInRequest).subscribe(data=>{
-        this.SignInResponse = data;
-        if(this.SignInResponse.token!=="" || this.SignInResponse.token!==null){
-          this.router.navigate(['admin'])
-        }
-      },
-      error => {
-        console.log("error",error);
-        this.errorMessage = "Login or Password is incorrect!"
+    if (this.loginForm.valid) {
+      this.authService.SignIn(this.SignInRequest).subscribe(
+        (data) => {
+          this.SignInResponse = data;
+          console.log(data);
 
-      })
+          if (
+            this.SignInResponse.token !== '' ||
+            this.SignInResponse.token !== null
+          ) {
+            if (data.isAdmin) {
+              this.router.navigate(['admin']);
+            } else {
+              this.router.navigate(['products']).then(() => {
+                window.location.reload();
+              });
+            }
+          }
+        },
+        (error) => {
+          console.log('error', error);
+          this.errorMessage = 'Login or Password is incorrect!';
+        }
+      );
     } else {
       this.showErrorMessage = true;
     }

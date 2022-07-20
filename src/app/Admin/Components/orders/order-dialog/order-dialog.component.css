@@ -1,0 +1,86 @@
+.row{
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.row .rowItem{
+  width: 29%;
+}
+.row input{
+  width: 100%;
+  height: 30px;
+  border-radius: 6px;
+  padding: 5px;
+  background: #FFFFFF;
+border: 1px solid #7B8689;
+border-radius: 8px;
+outline: none;
+}
+h3{
+  padding: 5px 20px;
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 27px;
+display: flex;
+    justify-content:end;
+/* identical to box height */
+
+
+color: #1A1A1A;
+}
+.row p{
+  margin: 5px 0;
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 19px;
+
+color: #333333;
+}
+h2{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  color: #1A1A1A;
+}
+.line{
+  width: 65%;
+border: 1px solid #ADADAD;
+}
+.lineblock{
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.userInfo .row p{
+  margin-top: 0;
+}
+.buttons{
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: space-between;
+}
+.buttons button {
+  margin: 24px 0px;
+  width: 45%;
+  height: 41px;
+  font-size: 17px;
+  /* padding: 14px; */
+  background: #FDCB47;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.orderInfo{
+  height:165px
+}
+

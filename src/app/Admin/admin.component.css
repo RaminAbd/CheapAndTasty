@@ -5,10 +5,13 @@
 .admin-nav-bar{
   width:240px;
   background: #EAEDF2;
-  position: relative;
+  position: fixed;
+  height:100vh
 }
 .admin-pages{
-  width:80%;
+  width: calc(100% - 240px);
   padding-left: 60px;
   padding-top: 60px;
+  position: absolute;
+  right: 0;
 }

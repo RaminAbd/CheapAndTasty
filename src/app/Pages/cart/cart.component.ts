@@ -25,14 +25,18 @@ export class CartComponent implements OnInit {
     this.address = localStorage.getItem('address') as string;
     this.GetCartByUserId(this.userId);
 
-    this.GetCartByUserId(this.userId);
+    // this.GetCartByUserId(this.userId);
   }
   GetCartByUserId(id:string){
     this.cartService.GetCartByUserId(id).subscribe(resp=>{
       this.cartResponse = resp.data
       this.totalPrice = this.cartResponse.totalPrice + 2;
       console.log(this.cartResponse);
-
+      if(this.cartResponse.cartItems.length ===0){
+        this.router.navigate(['/products']).then(() => {
+          window.location.reload();
+        });
+      }
     })
   }
   removeCartItem(item:any){

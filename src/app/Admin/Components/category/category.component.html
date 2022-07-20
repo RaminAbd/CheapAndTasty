@@ -13,11 +13,13 @@
   <div class="category-list">
     <p class="catHead">Created Categories</p>
     <div class="list">
-      <div class="item"  *ngFor="let category of Categories">
+      <div class="item" *ngFor="let category of Categories">
         <p>{{category.name}}</p>
         <div class="actions">
-          <div class="edit" style="cursor: pointer" (click)="editCategory(category)"><img src="assets/images/pencil.svg" alt=""></div>
-          <div class="delete" style="cursor: pointer" (click)="deleteCategory(category.id)"><img src="assets/images/delete.svg" alt=""></div>
+          <div class="edit" style="cursor: pointer" (click)="editCategory(category)"><img src="assets/images/pencil.svg"
+              alt=""></div>
+          <div class="delete" style="cursor: pointer" (click)="deleteCategory(category.id)"><img
+              src="assets/images/delete.svg" alt=""></div>
         </div>
       </div>
     </div>

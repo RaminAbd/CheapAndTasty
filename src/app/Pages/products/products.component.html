@@ -10,13 +10,14 @@
     <div class="logout" *ngIf="isLoggedIn">
       <button (click)="Logout()">Logout</button>
     </div>
-    <app-login *ngIf="showLogin"></app-login>
-    <div *ngIf="haveOrders" class="haveNoOrders">
+
+    <app-login *ngIf="!isLoggedIn"></app-login>
+    <div *ngIf="!haveOrders && isLoggedIn" class="haveNoOrders">
       <img src="assets/images/CheapAndTasty.svg" alt="">
       <h3 style="margin-top:25px">You have no orders.</h3>
     </div>
     <div class="cart">
-      <app-cart *ngIf="showCart"></app-cart>
+      <app-cart *ngIf="haveOrders && isLoggedIn"></app-cart>
     </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DishService } from '../../Services/Dishes.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Category } from '../../../Models/Category';
 import { CategoryService } from '../../Services/Categories.service';
 import { Dish } from '../../../Models/Dish';
@@ -27,9 +27,13 @@ export class DishesComponent implements OnInit {
   Category:Category = new Category();
   Ingredients:Ingredient[] = [];
   Ingredient:Ingredient = new Ingredient();
-  constructor(private service:DishService, private router:Router, private categoryService:CategoryService, private ingredientService:IngredientService) { }
+  categoryId:string;
+  constructor(private service:DishService, private router:Router, private categoryService:CategoryService, private ingredientService:IngredientService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.categoryId = this.route.snapshot.paramMap.get('categoryId') as string;
+    console.log(this.categoryId, "in dishes components");
+
     this.categoryService.GetAll().subscribe(resp=>{
       console.log(resp.data);
       this.Categories = resp.data;

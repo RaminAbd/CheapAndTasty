@@ -1,0 +1,49 @@
+<div class="dialog">
+  <div class="header">
+    <h2>Order Info</h2>
+
+  </div>
+  <div class="body">
+    <div class="orderInfo">
+      <h3>Total Price: {{data.totalPrice}} <span style="margin-left:7px">GEL</span></h3>
+
+      <div class="row" *ngFor="let order of data.items">
+        <div class="rowItem">
+          <p>Name</p>
+          <input type="text" readonly disable [(ngModel)]="order.name">
+        </div>
+        <div class="rowItem">
+          <p>Price<span style="margin-left:2px">(GEL)</span></p>
+          <input type="text" readonly [(ngModel)]="order.price">
+        </div>
+        <div class="rowItem">
+          <p>Quantity</p>
+          <input type="text" readonly [(ngModel)]="order.qty">
+        </div>
+      </div>
+    </div>
+    <div class="lineblock">
+      <div class="line"></div>
+    </div>
+    <div class="userInfo">
+      <div class="row">
+        <div class="rowItem">
+          <p>User Name</p>
+          <input type="text" readonly [(ngModel)]="data.userName">
+        </div>
+        <div class="rowItem">
+          <p>Address</p>
+          <input type="text" readonly [(ngModel)]="data.address">
+        </div>
+        <div class="rowItem">
+          <p>Phone Number</p>
+          <input type="text" readonly [(ngModel)]="data.phoneNumber">
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button type="submit" class="deliver" (click)="CompleteOrder()">Deliver</button>
+      <button type="submit" class="cancel" style="margin:0;background: #7B8689" (click)="closeDialog()">Cancel</button>
+    </div>
+  </div>
+</div>

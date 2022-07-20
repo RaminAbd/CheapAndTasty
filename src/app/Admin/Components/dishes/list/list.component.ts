@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DishService } from '../../../Services/Dishes.service';
 import { Dish } from '../../../../Models/Dish';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -9,7 +10,7 @@ import { Dish } from '../../../../Models/Dish';
 })
 export class ListComponent implements OnInit {
   Dishes:Dish[] = [];
-  constructor(private dishService:DishService) { }
+  constructor(private dishService:DishService, private router:Router) { }
 
   ngOnInit(): void {
    this.GetAllDishes();
@@ -25,7 +26,8 @@ export class ListComponent implements OnInit {
     return url;
   }
   editCategory(item:any){
-
+    console.log(item);
+    this.router.navigate(['/admin/dishes/dish/',item.id, item.categoryId])
   }
   deleteCategory(id:string){
     this.dishService.DeleteDish(id).subscribe(resp=>{

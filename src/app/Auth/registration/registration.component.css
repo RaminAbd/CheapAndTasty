@@ -43,15 +43,15 @@
   flex-direction: column;
 }
 
-.registration-page .registration-form .registration-form_flex-top{
+.registration-page .registration-form .registration-form_flex-top {
   display: flex;
 }
 
-.registration-page .registration-form .registration-form_flex-bottom{
+.registration-page .registration-form .registration-form_flex-bottom {
   display: flex;
 }
 
-.registration-page .registration-form .registration-form_form-group{
+.registration-page .registration-form .registration-form_form-group {
   display: flex;
   flex-direction: column;
   margin-right: 24px;
@@ -73,12 +73,13 @@
   border-radius: 8px;
 }
 
-.registration-page .registration-form .registration-form_form-group .registration-form_error-message{
+.registration-page .registration-form .registration-form_form-group .registration-form_error-message {
   font-size: 14px;
   color: var(--primary);
   margin-top: -6px;
   margin-bottom: 16px;
 }
+
 /*
 .registration-page .registration-form .registration-form_form-group input:focus {
   outline: none;
@@ -87,7 +88,7 @@
 .registration-page .registration-form button {
   margin: 24px 0px;
   height: 50px;
-  width:  350px;
+  width: 350px;
   font-size: 18px;
   padding: 14px;
   background: #FDCB47;
@@ -100,13 +101,13 @@
 .registration-page .registration-form button:hover {
   /* background: var(--primary-hover)
    */
-   cursor: pointer;
+  cursor: pointer;
 }
 
 .registration-page .registration-form button:active {
   transform: scale(0.99);
 }
 
-.registration-page .registration-form a{
+.registration-page .registration-form a {
   color: var(--text-secondary-dark)
 }

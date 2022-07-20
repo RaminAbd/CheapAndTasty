@@ -23,6 +23,7 @@ export class DishComponent implements OnInit {
   extension:any;
   buttonName:string="Save";
   Dish:DishRequest = new DishRequest()
+  DishObject:Dish = new Dish();
   Ingredients:Ingredient[] = [];
   Ingredient:Ingredient = new Ingredient();
   constructor(private service:DishService,private route: ActivatedRoute,private dishService:DishService, private router:Router, private categoryService:CategoryService, private ingredientService:IngredientService) { }
@@ -32,6 +33,11 @@ export class DishComponent implements OnInit {
     console.log("llfkvnlkjdsfn lkbnskdflnbkdflbnkldfnbkl");
     this.categoryId = this.route.snapshot.paramMap.get('categoryId') as string;
     this.dishId = this.route.snapshot.paramMap.get('dishId') as string;
+    this.dishService.GetById(this.dishId).subscribe(resp=>{
+      console.log(resp.data);
+      this.DishObject = resp.data;
+      this.AddedIngredients = this.DishObject.ingredients;
+    })
     this.ingredientService.GetAll().subscribe(resp=>{
       this.Ingredients = resp.data;
     })
@@ -54,7 +60,15 @@ export class DishComponent implements OnInit {
     this.Dish.image = this.image;
     this.Dish.dishId = this.dishId;
     this.Dish.categoryId = this.categoryId
-    console.log(this.Dish);
+    this.Dish.name = this.DishObject.name;
+    this.Dish.price = this.DishObject.price;
+    this.Dish.description = this.DishObject.description
+    this.Dish.videoURL = this.DishObject.videoURL
+    console.log(this.Dish ,"dish");
+    console.log(this.DishObject ,"dishObject");
+
+
+
     this.dishService.UpdateDish(this.Dish).subscribe(data => {
       if(data.isSuccess){
         this.router.navigate(['admin/dishes/list'])
