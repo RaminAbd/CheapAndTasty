@@ -148,6 +148,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .mat-dialog-container{
   padding:0 !important;
+  border-radius:12px !important;
 }
 .dialog .header{
   display: flex;

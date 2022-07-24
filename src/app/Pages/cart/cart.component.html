@@ -16,12 +16,12 @@
         <p class="name">{{item.qty}}</p>
         <div class="delete" (click)="removeCartItem(item)" style="cursor: pointer"><img src="assets/images/delete.svg" alt=""></div>
       </div>
-      <p class="price">{{item.price}}$</p>
+      <p class="price">{{item.price}} GEL</p>
     </div>
   </div>
   <div class="line"></div>
   <div class="totals">
-    <div class="row"><p>Sub Total</p> <p class="price">{{cartResponse.totalPrice}}</p></div>
+    <div class="row"><p>Sub Total</p> <p class="price">{{cartResponse.totalPrice}} GEL</p></div>
     <div class="row"><p>Delivery</p> <p class="price">2 GEL</p></div>
   </div>
   <div class="line"></div>

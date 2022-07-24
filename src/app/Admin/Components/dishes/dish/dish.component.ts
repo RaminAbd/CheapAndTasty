@@ -26,17 +26,31 @@ export class DishComponent implements OnInit {
   DishObject:Dish = new Dish();
   Ingredients:Ingredient[] = [];
   Ingredient:Ingredient = new Ingredient();
-  constructor(private service:DishService,private route: ActivatedRoute,private dishService:DishService, private router:Router, private categoryService:CategoryService, private ingredientService:IngredientService) { }
+  constructor(
+    private service:DishService,
+    private route: ActivatedRoute,
+    private dishService:DishService,
+    private router:Router,
+    private categoryService:CategoryService,
+    private ingredientService:IngredientService
+    ) { }
   categoryId:string;
 
   ngOnInit(): void {
-    console.log("llfkvnlkjdsfn lkbnskdflnbkdflbnkldfnbkl");
     this.categoryId = this.route.snapshot.paramMap.get('categoryId') as string;
     this.dishId = this.route.snapshot.paramMap.get('dishId') as string;
     this.dishService.GetById(this.dishId).subscribe(resp=>{
-      console.log(resp.data);
       this.DishObject = resp.data;
-      this.AddedIngredients = this.DishObject.ingredients;
+      // this.AddedIngredients = this.DishObject.ingredients;
+      this.DishObject.ingredients.forEach(item=>{
+        var ingredient:any = {
+          ingredientId:item.id,
+          qty:item.qty,
+          dimension:item.dimension,
+          name:item.ingredient.name
+        }
+        this.AddedIngredients.push(ingredient)
+      })
     })
     this.ingredientService.GetAll().subscribe(resp=>{
       this.Ingredients = resp.data;
@@ -62,14 +76,11 @@ export class DishComponent implements OnInit {
     this.Dish.categoryId = this.categoryId
     this.Dish.name = this.DishObject.name;
     this.Dish.price = this.DishObject.price;
-    this.Dish.description = this.DishObject.description
-    this.Dish.videoURL = this.DishObject.videoURL
-    console.log(this.Dish ,"dish");
-    console.log(this.DishObject ,"dishObject");
-
-
-
+    this.Dish.description = this.DishObject.description;
+    this.Dish.videoURL = this.DishObject.videoURL;
     this.dishService.UpdateDish(this.Dish).subscribe(data => {
+      console.log(data);
+
       if(data.isSuccess){
         this.router.navigate(['admin/dishes/list'])
       }
@@ -78,17 +89,19 @@ export class DishComponent implements OnInit {
   }
   AddedIngredients:any[] = [];
   AddIngredient(ingr:any){
-    var ingredient:Ingredient = {
+    var ingredient:any = {
       ingredientId:ingr.id,
       qty:ingr.qty,
-      dimension:ingr.dimension
+      dimension:ingr.dimension,
+      name:ingr.name
     }
     this.AddedIngredients.push(ingredient)
-    console.log(this.AddedIngredients);
-
   }
   DeleteIngredient(id:string) {
-    this.AddedIngredients = this.AddedIngredients.filter(item => item.id !== id);
+    console.log(id);
+    console.log(this.AddedIngredients);
+
+    this.AddedIngredients = this.AddedIngredients.filter(item => item.ingredientId!== id);
     console.log(this.AddedIngredients);
 
   }

@@ -15,7 +15,7 @@
         <p>{{item.description}}</p>
       </div>
       <div class="ingredients">
-        <p *ngFor="let ingred of item.ingredients">{{ingred.ingredient.name}}</p>,
+        <p style="margin-right:5px; font-style:italic;" *ngFor="let ingred of item.ingredients">{{ingred.ingredient.name}}, </p>
       </div>
       <div class="actions">
         <div class="edit"  (click)="editCategory(item)"><img src="assets/images/pencil.svg" alt=""></div>

@@ -37,8 +37,8 @@
   </div>
   <div class="ingredient-list">
     <div class="item" *ngFor="let item of AddedIngredients">
-      <p>{{item.ingredient.name}}</p>
-      <div class="delete"><img src="assets/images/remove.svg" alt="" (click)="DeleteIngredient(item.id)"></div>
+      <p>{{item.name}}</p>
+      <div class="delete"><img src="assets/images/remove.svg" alt="" (click)="DeleteIngredient(item.ingredientId)"></div>
     </div>
 
 

@@ -51,6 +51,7 @@
   font-size: 16px;
   line-height: 19px;
   color: #323232;
+  margin: 0;
 }
 .filterItem{
   width: 124px;
@@ -69,7 +70,7 @@ font-style: normal;
 font-weight: 500;
 font-size: 16px;
 line-height: 19px;
-
+margin:0;
 color: #323232;
 }
 .filters{

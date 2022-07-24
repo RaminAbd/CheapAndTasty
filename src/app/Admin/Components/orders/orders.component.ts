@@ -28,7 +28,6 @@ export class OrdersComponent implements OnInit {
   edit(data:any){
     console.log(data);
     const dialogRef = this.dialog.open(OrderDialogComponent, {
-      height: '400px',
       width: '600px',
       data: data
     });
